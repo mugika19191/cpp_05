@@ -1,10 +1,10 @@
 class Bureaucrat;
-#ifndef FORM_HPP
-#define FORM_HPP
+#ifndef AFORM_HPP
+#define AFORM_HPP
 #include <iostream>
 #include "Bureaucrat.hpp"
 
-class Form
+class AForm
 {
 	private:
 		const  std::string name;
@@ -12,14 +12,15 @@ class Form
 		const int s_grade;
 		const int e_grade;
 	public:
-		Form();
-		Form(std::string newName, int s_g, int e_g);
-		~Form();
-		Form(const Form &copy);
-		Form &operator=(const Form &src);
+		AForm();
+		AForm(std::string newName, int s_g, int e_g);
+		~AForm();
+		AForm(const AForm &copy);
+		AForm &operator=(const AForm &src);
 
 		std::string getName();
 		bool getSign();
+		void beSigned(Bureaucrat &b);
 		void beSigned(Bureaucrat &b);
 
 		class GradeTooHighException : public std::exception{
